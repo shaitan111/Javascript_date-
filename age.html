@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get age</title>
+</head>
+
+<body>
+
+    <input type="date" id="start" name="trip-start" value="2018-07-22" min="2000-01-01" max="2023-12-31">
+    <button> click me </button>
+<p></p>
+
+<script>
+    const btn = document.querySelector("button");
+    const inp = document.querySelector("input");
+
+    btn.onclick = () => {
+        document.querySelector("p").innerHTML = "";
+
+        const today = new Date();
+        const userinput = new Date(inp.value);
+
+        const todayDate = today.getDate();
+        const todayMonth = today.getMonth();
+        const todayYear = today.getFullYear();
+
+        const userDate = userinput.getDate();
+        const userMonth = userinput.getMonth();
+        const userYear = userinput.getFullYear();
+
+        const difference = {
+            days: todayDate - userDate,
+            months: todayMonth - userMonth,
+            years: todayYear - userYear,
+        };
+
+        document.querySelector("p").innerHTML =
+            "You are " +
+            difference.years +
+            " years, " +
+            difference.months +
+            " months, and " +
+            difference.days +
+            " days old";
+    };
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
